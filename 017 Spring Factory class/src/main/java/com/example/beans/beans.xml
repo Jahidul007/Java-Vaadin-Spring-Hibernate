@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-destroy-method="destroy" default-init-method="init">
+
+
+	<bean id="patient" class="com.example.maventest.Patient"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
+		<constructor-arg value="5"></constructor-arg>
+		<constructor-arg value="Tom"></constructor-arg>
+		<property name="nationalId" value="1234"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+	
+	<bean id="patient2" class="com.example.maventest.Patient"
+		scope="singleton" init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPatient" factory-bean="patientFactory">
+		<constructor-arg value="5"></constructor-arg>
+		<constructor-arg value="Molly"></constructor-arg>
+		<property name="nationalId" value="1234"></property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="address" class="com.example.maventest.Address">
+		<constructor-arg name="street" value="kotbari-road"></constructor-arg>
+		<constructor-arg name="postcode" value="3500"></constructor-arg>
+	</bean>
+	<bean class="com.example.maventest.PatientFactory"
+		id="patientFactory">
+	</bean>
+</beans>
