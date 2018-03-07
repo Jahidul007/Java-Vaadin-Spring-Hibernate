@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-destroy-method="destroy" default-init-method="init"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="patient" class="com.example.maventest.Patient">
+		<property name="emergencyContact">
+			<list>
+				<bean class="com.example.maventest.EmergencyContact">
+					<property name="name" value="Harry bro"></property>
+					<property name="phnNumber" value="01717202205"></property>
+				</bean>
+				<ref bean="contact" />
+				<ref bean="contact1" />
+				<ref bean="contact2" />
+				<ref bean="contact3" />
+
+			</list>
+		</property>
+		<property name="criticalContact">
+			<bean class="com.example.maventest.EmergencyContact">
+				<property name="name" value="Debb bro"></property>
+				<property name="phnNumber" value="01717202205"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="contact" class="com.example.maventest.EmergencyContact">
+		<property name="name" value="Anon bro"></property>
+		<property name="phnNumber" value="01717202205"></property>
+	</bean>
+	<bean id="contact1" class="com.example.maventest.EmergencyContact">
+		<property name="name" value="abir bro"></property>
+		<property name="phnNumber" value="01717202205"></property>
+	</bean>
+	<bean id="contact2" class="com.example.maventest.EmergencyContact">
+		<property name="name" value="jahir bro"></property>
+		<property name="phnNumber" value="01717202205"></property>
+	</bean>
+	<bean id="contact3" class="com.example.maventest.EmergencyContact">
+		<property name="name" value="naeem bro"></property>
+		<property name="phnNumber" value="01717202205"></property>
+	</bean>
+	<bean id="contactBook" class="com.example.maventest.ContactBook">
+		<property name="contacts">
+			<map>
+				<entry key="first" value-ref="contact"></entry>
+				<entry key="second" value-ref="contact1"></entry>
+				<entry key="third" value-ref="contact2"></entry>
+				<entry key="fourth" value-ref="contact3"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>
