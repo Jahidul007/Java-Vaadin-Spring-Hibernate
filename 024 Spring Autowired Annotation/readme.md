@@ -6,11 +6,12 @@ The @Autowired annotation provides more fine-grained control over where and how 
 		this.fileWriter = fileWriter;<br/> 
 	}
 # @Autowired on Properties
- @Autowired<br/> 
+@Autowired<br/> 
 private ConsoleWriter consoleWriter;
 # @Autowired on Constructors
 @Autowired <br/> 
- public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter)<br/> 
+public Logger(ConsoleWriter consoleWriter, FileWriter fileWriter)<br/> 
 {<br/> 
-this.consoleWriter = consoleWriter; this.fileWriter = fileWriter; <br/> 
+this.consoleWriter = consoleWriter; <br/> 
+this.fileWriter = fileWriter; <br/> 
 }
