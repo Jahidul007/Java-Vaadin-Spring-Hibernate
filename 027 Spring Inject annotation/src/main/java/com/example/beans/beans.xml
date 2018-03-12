@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-destroy-method="destroy" default-init-method="init"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean id="demo" class="com.example.maventest.ConsoleWriter">
+	</bean>
+	<bean id="demo1" class="com.example.maventest.ConsoleWriter">
+	</bean>
+
+	<bean id="fileWriter" class="com.example.maventest.FileWriter"></bean>
+
+	<bean id="logger" class="com.example.maventest.Logger">
+		<!-- autowire="byType" autowire="constructor" autowire="default" -->
+
+	</bean>
+	<context:annotation-config></context:annotation-config>
+</beans>
