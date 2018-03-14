@@ -5,15 +5,9 @@
  jdbc.url=jdbc:mysql://localhost:3306/Database_name<br/>
  
 # bean.xml
- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"><br/>
-		<property name="driverClassName" value="${jdbc.driver}"></property><br/>
-		<property name="url" value="${jdbc.url}"></property><br/>
-		<property name="username" value="${jdbc.user}"></property><br/>
-		<property name="password" value="${jdbc.password}"></property><br/>
- </bean>
-  
+![capture](https://user-images.githubusercontent.com/26745548/37391084-59c0e500-2794-11e8-89b2-7c200841f70f.PNG)
 # pom.xml (dependencies)
--> MySql-connector-java
--> Commons-dbpc
--> Sprming-jdbc
+-> MySql-connector-java<br/>
+-> Commons-dbpc<br/>
+-> Sprming-jdbc<br/>
 
