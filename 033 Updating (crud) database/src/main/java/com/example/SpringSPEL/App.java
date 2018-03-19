@@ -9,7 +9,6 @@ import org.springframework.jdbc.CannotGetJdbcConnectionException;
 
 /**
  * Hello world!
- *
  */
 public class App {
 	public static void main(String[] args) {
@@ -18,29 +17,32 @@ public class App {
 		NoticesDAO noticeDao = (NoticesDAO) context.getBean("noticeDao");
 
 		try {
-			/*delete operation
-			noticeDao.delete(3);*/
+			/*
+			 //delete operation 
+			 noticeDao.delete(3);
+			 
+			//insert operation
+			Notice notice1 = new Notice("parthiv", "parthiv@gmail.com", "i love to play cricket");
+			noticeDao.create(notice1);*/
 			
-			Notice notice1 = new Notice("parthiv","parthiv@gmail.com","i love to play cricket");
-			noticeDao.create(notice1);
-			
-			List<Notice> notices = noticeDao.getNotices(); 
+			//update
+			Notice notice1 = new Notice(7,"Sanon", "sanon@gmail.com", "ranon loves to play Tennis");
+			noticeDao.update(notice1);
+
+			List<Notice> notices = noticeDao.getNotices();
 			for (Notice notice : notices) {
 				System.out.println(notice);
 			}
-			
 
 		} catch (CannotGetJdbcConnectionException ex1) {
 			System.out.println(ex1.getMessage());
 			System.out.println(ex1.getClass());
 
-		}catch (DataAccessException ex) {
+		} catch (DataAccessException ex) {
 			System.out.println(ex.getMessage());
 			System.out.println(ex.getClass());
 
 		}
-		
-
 
 		((ClassPathXmlApplicationContext) context).close();
 	}

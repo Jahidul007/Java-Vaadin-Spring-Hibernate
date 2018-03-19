@@ -31,28 +31,33 @@ public class NoticesDAO {
 				notice.setName(rs.getString("Name"));
 				notice.setEmail(rs.getString("Email"));
 				notice.setText(rs.getString("Text"));
-
 				return notice;
 			}
 
 		});
 
 	}
-	public boolean delete (int id ) {
+
+	public boolean delete(int id) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", id);
-		
-		return jdbc.update("delete from notices where id=:id",params)==1;    
+		return jdbc.update("delete from notices where id=:id", params) == 1;
 	}
-	
-	public boolean create (Notice notice) {
+
+	public boolean create(Notice notice) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(notice);
-		return jdbc.update("insert into notices (name ,email, text) values(:name, :email,:text)", params)==1;
+		return jdbc.update("insert into notices (name, email, text) values(:name, :email,:text)", params) == 1;
 	}
+
+	public boolean update(Notice notice) {
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(notice);
+		return jdbc.update("update notices set name=:name, email=:email, text=:text where id=:id ", params) == 1;
+	}
+
 	public Notice getNotice(int id) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
-		params.addValue("id",id);
-		return jdbc.queryForObject("Select * from notices where id=:id",params, new RowMapper<Notice>() {
+		params.addValue("id", id);
+		return jdbc.queryForObject("Select * from notices where id=:id", params, new RowMapper<Notice>() {
 
 			public Notice mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Notice notice = new Notice();
