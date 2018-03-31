@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>HTML FORM</title>
 </head>
 <body>
-	HI THERE!!! Spring MVC - Home Page!!!!
-	<hr>
-	<a href="showForm">Hello spring from </a>
+	<form action="processFormVersionTwo" method="get">
 	
+		<input type="text" name="studentName" placeholder="What's your name?"/>
+		<input type="submit"/>
+	
+	</form> 
 </body>
 </html>
