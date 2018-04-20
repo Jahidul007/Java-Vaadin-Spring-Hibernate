@@ -1,7 +1,8 @@
 Association Mappings
-The mapping of associations between entity classes and the relationships between tables is the soul of ORM. Following are the four ways in which the cardinality of the relationship between the objects can be expressed. An association mapping can be unidirectional as well as bidirectional.
+The mapping of associations between entity classes and the relationships between tables is the soul of ORM.
+Following are the four ways in which the cardinality of the relationship between the objects can be expressed.
+An association mapping can be unidirectional as well as bidirectional.
 
-Sr.No.	Mapping type & Description
 1	Many-to-One
 Mapping many-to-one relationship using Hibernate
 
