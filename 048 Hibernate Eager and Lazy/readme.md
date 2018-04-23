@@ -1,5 +1,5 @@
 # EAGER VS LAZY
-The University entity might have some basic properties such as id, name, address, etc. as well as a property called students:
+*The University entity might have some basic properties such as id, name, address, etc. as well as a property called students:*
 <br/>
 **public class University {<br/>
  private String id;<br/>
@@ -9,7 +9,7 @@ The University entity might have some basic properties such as id, name, address
 
  // setters and getters<br/>
 }<br/>
-Now when you load a University from the database, JPA loads its id, name, and address fields for you. But you have two options for students: to load it together with the rest of the fields (i.e. eagerly) or to load it on-demand (i.e. lazily) when you call the university's getStudents() method.
+*Now when you load a University from the database, JPA loads its id, name, and address fields for you. But you have two options for students: to load it together with the rest of the fields (i.e. eagerly) or to load it on-demand (i.e. lazily) when you call the university's getStudents() method.*
 <br/>
 <br/>
 When a university has many students it is not efficient to load all of its students with it when they are not needed. So in suchlike cases, you can declare that you want students to be loaded when they are actually needed. This is called lazy loading.<br/>
