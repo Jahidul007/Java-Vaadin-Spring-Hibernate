@@ -6,8 +6,8 @@ concerns are conceptually separate from the application's business logic. There 
 of aspects such as logging, auditing, declarative transactions, security, caching, etc.<br/>
 
 # Before Aspect 
-@Before is an advice type which ensures that an advice runs before the method execution. <br/>
-Following is the syntax of @Before advice.<br/><br/>
+. @Before is an advice type which ensures that an advice runs before the method execution. <br/>
+. Following is the syntax of @Before advice.<br/><br/>
 @PointCut("execution(* com.tutorialspoint.Student.getName(..))")<br/>
 private void selectGetName(){}<br/><br/>
 
